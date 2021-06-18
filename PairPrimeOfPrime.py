@@ -36,23 +36,19 @@ def isprime(n):
         k+=1
         a, b = 6 * k - 1, 6 * k + 1
     return True
-    
 n=int(input())
 l=[]
 for i in range(2,n):
     if(isprime(i)==True):
         l.append(i)
 c=list(combinations(l,2))
-print(c)
-if(len(c)>0):
-    for i in c:
-        x=0
-        if(sum(i)==n):
-            x=i[0]
+x=0
+for i in c:
+    if(sum(i)==n):
+        x=i[0]
+        break
 
-    if(x==0):
-        print('-1')
-    else:
-        print(x,n-x)
+if(x==0):
+    print('-1')
 else:
-    print("-1")
+    print(x,n-x)
